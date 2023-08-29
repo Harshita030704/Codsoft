@@ -1,0 +1,106 @@
+from tkinter import *
+root=Tk()
+root.geometry("290x290+50+150")
+root.resizable(0,1)
+root.title("Calculator")
+root.iconbitmap("") 
+
+
+
+a=StringVar()
+
+roll_e=Entry(root,relief="groove",bg="powder blue",textvariable=a,justify="right",font=("Ariel",16,"bold"))
+roll_e.place(x=0,y=0,width=290,height=80)
+
+
+def show(op):
+    a.set(a.get()+op)
+    
+def eql():
+    exp=a.get()
+    a.set(eval(exp))
+    
+def clr():
+    a.set(" ")
+
+b1=Button(root,text="1",font=("Ariel",14,"bold"),fg="white",bg="black",activeforeground="red",activebackground="white")
+b1.place(x=0,y=80,width=50,height=50)
+b1.configure(command=lambda:show("1"))
+
+b2=Button(root,text="2",font=("Ariel",14,"bold"),fg="white",bg="black",activeforeground="red",activebackground="white")
+b2.place(x=50,y=80,width=50,height=50)
+b2.configure(command=lambda:show("2"))
+
+b3=Button(root,text="3",font=("Ariel",14,"bold"),fg="white",bg="black",activeforeground="red",activebackground="white")
+b3.place(x=100,y=80,width=50,height=50)
+b3.configure(command=lambda:show("3"))
+
+b4=Button(root,text="4",font=("Ariel",14,"bold"),fg="white",bg="black",activeforeground="red",activebackground="white")
+b4.place(x=0,y=130,width=50,height=50)
+b4.configure(command=lambda:show("4"))
+
+b5=Button(root,text="5",font=("Ariel",14,"bold"),fg="white",bg="black",activeforeground="red",activebackground="white")
+b5.place(x=50,y=130,width=50,height=50)
+b5.configure(command=lambda:show("5"))
+
+b6=Button(root,text="6",font=("Ariel",14,"bold"),fg="white",bg="black",activeforeground="red",activebackground="white")
+b6.place(x=100,y=130,width=50,height=50)
+b6.configure(command=lambda:show("6"))
+
+b7=Button(root,text="7",font=("Ariel",14,"bold"),fg="white",bg="black",activeforeground="red",activebackground="white")
+b7.place(x=0,y=180,width=50,height=50)
+b7.configure(command=lambda:show("7"))
+
+b8=Button(root,text="8",font=("Ariel",14,"bold"),fg="white",bg="black",activeforeground="red",activebackground="white")
+b8.place(x=50,y=180,width=50,height=50)
+b8.configure(command=lambda:show("8"))
+
+b9=Button(root,text="9",font=("Ariel",14,"bold"),fg="white",bg="black",activeforeground="red",activebackground="white")
+b9.place(x=100,y=180,width=50,height=50)
+b9.configure(command=lambda:show("9"))
+
+bc=Button(root,text="C",font=("Ariel",14,"bold"),fg="white",bg="black",activeforeground="red",activebackground="white")
+bc.place(x=0,y=230,width=50,height=50)
+bc.configure(command=clr)
+
+b0=Button(root,text="0",font=("Ariel",14,"bold"),fg="white",bg="black",activeforeground="red",activebackground="white")
+b0.place(x=50,y=230,width=50,height=50)
+b0.configure(command=lambda:show("0"))
+
+bd=Button(root,text=".",font=("Ariel",14,"bold"),fg="white",bg="black",activeforeground="red",activebackground="white")
+bd.place(x=100,y=230,width=50,height=50)
+bd.configure(command=lambda:show("."))
+
+mul=Button(root,text="*",font=("Ariel",14,"bold"),fg="white",bg="black",activeforeground="red",activebackground="white")
+mul.place(x=150,y=80,width=80,height=50)
+mul.configure(command=lambda:show("*"))
+
+div=Button(root,text="/",font=("Ariel",14,"bold"),fg="white",bg="black",activeforeground="red",activebackground="white")
+div.place(x=150,y=130,width=80,height=50)
+div.configure(command=lambda:show("/"))
+
+sub=Button(root,text="-",font=("Ariel",14,"bold"),fg="white",bg="black",activeforeground="red",activebackground="white")
+sub.place(x=150,y=180,width=80,height=50)
+sub.configure(command=lambda:show("-"))
+
+add=Button(root,text="+",font=("Ariel",14,"bold"),fg="white",bg="black",activeforeground="red",activebackground="white")
+add.place(x=150,y=230,width=80,height=50)
+add.configure(command=lambda:show("+"))
+
+eql1=Button(root,text="=",font=("Ariel",14,"bold"),fg="white",bg="black",activeforeground="red",activebackground="white")
+eql1.place(x=230,y=80,width=60,height=50)
+eql1.configure(command=eql)
+
+per=Button(root,text="%",font=("Ariel",14,"bold"),fg="white",bg="black",activeforeground="red",activebackground="white")
+per.place(x=230,y=130,width=60,height=50)
+per.configure(command=lambda:show("%"))
+
+pi=Button(root,text="pi",font=("Ariel",14,"bold"),fg="white",bg="black",activeforeground="red",activebackground="white")
+pi.place(x=230,y=180,width=60,height=50)
+pi.configure(command=lambda:show("3.14"))
+
+b00=Button(root,text="00",font=("Ariel",14,"bold"),fg="white",bg="black",activeforeground="red",activebackground="white")
+b00.place(x=230,y=230,width=60,height=50)
+b00.configure(command=lambda:show("00"))
+         
+root.mainloop()
